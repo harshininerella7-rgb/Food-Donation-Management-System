@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodShare | Food Donation Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark">♥</span><div><strong>FoodShare</strong><small>Food Donation Management</small></div></div>
+    <nav><a href="#available">Available food</a><a href="#donate">Donate food</a><a href="#how">How it works</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">SHARE FOOD · SHARE HOPE</p>
+        <h1>Good food deserves<br /><span>a second chance.</span></h1>
+        <p class="hero-description">Connect surplus food with people and organizations who need it. Every donation can make a difference.</p>
+        <div class="hero-actions"><a class="button primary" href="#donate">Donate food</a><a class="button secondary" href="#available">Find food</a></div>
+        <div class="hero-note">♻ Reduce waste · 🤝 Support communities · 💚 Make an impact</div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a bowl of fresh food" role="img">
+        <div class="sun"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
+        <div class="plate"><div class="food food-one"></div><div class="food food-two"></div><div class="food food-three"></div><div class="food food-four"></div><div class="food food-five"></div></div>
+        <div class="art-caption">A little sharing goes a long way.</div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Community impact">
+      <div><strong id="statAvailable">—</strong><span>Available donations</span></div>
+      <div><strong id="statMeals">—</strong><span>Meals shared*</span></div>
+      <div><strong>One</strong><span>Community, together</span></div>
+    </section>
+    <p class="fine-print">*Estimated from listed portions. Figures update from this project's donation records.</p>
+
+    <section id="available" class="section">
+      <div class="section-heading"><div><p class="eyebrow">COMMUNITY BOARD</p><h2>Available food</h2><p>Browse donations and contact the donor through your organization.</p></div><button class="button secondary" id="refreshBtn">↻ Refresh</button></div>
+      <div class="filters"><input id="searchInput" type="search" placeholder="Search food, location, or donor…" aria-label="Search donations" /><select id="categoryFilter" aria-label="Filter by category"><option value="">All categories</option><option>Cooked Meals</option><option>Fruits & Vegetables</option><option>Bakery</option><option>Packaged Food</option><option>Dairy</option><option>Other</option></select></div>
+      <div id="donationGrid" class="donation-grid"><div class="empty-state">Loading donations…</div></div>
+      <div id="listMessage" class="message" role="status"></div>
+    </section>
+
+    <section id="donate" class="section donate-section">
+      <div class="donate-intro"><p class="eyebrow">MAKE A DIFFERENCE</p><h2>List a food donation</h2><p>Share clear details so a recipient can collect the food safely and on time.</p><div class="tip-card"><strong>Food safety reminder</strong><p>Only list food that is safe to consume. Include storage details, preparation time, and a realistic pickup deadline. Follow your local food-safety rules.</p></div></div>
+      <form id="donationForm" class="donation-form">
+        <label>Donor / organization name<input name="donor_name" required maxlength="100" placeholder="e.g. Green Leaf Café" /></label>
+        <label>Contact email<input name="contact_email" type="email" required maxlength="254" placeholder="you@example.com" /></label>
+        <label>Food name<input name="food_name" required maxlength="120" placeholder="e.g. Vegetable rice packets" /></label>
+        <div class="form-row"><label>Category<select name="category" required><option value="">Choose category</option><option>Cooked Meals</option><option>Fruits & Vegetables</option><option>Bakery</option><option>Packaged Food</option><option>Dairy</option><option>Other</option></select></label><label>Quantity<input name="quantity" required maxlength="80" placeholder="e.g. 20 meal boxes" /></label></div>
+        <label>Pickup location<input name="location" required maxlength="220" placeholder="Area, landmark, city" /></label>
+        <div class="form-row"><label>Available until<input name="available_until" type="datetime-local" required /></label><label>Storage / notes<input name="notes" maxlength="500" placeholder="e.g. Keep refrigerated" /></label></div>
+        <button class="button primary submit-button" type="submit">Publish donation <span>→</span></button>
+        <p id="formMessage" class="message" role="status"></p>
+      </form>
+    </section>
+
+    <section id="how" class="section how-section"><p class="eyebrow">SIMPLE AND PRACTICAL</p><h2>How FoodShare works</h2><div class="steps"><article><span>01</span><h3>List surplus food</h3><p>Donors add the food type, quantity, pickup location, and deadline.</p></article><article><span>02</span><h3>Find a donation</h3><p>Recipients browse available listings and request a suitable donation.</p></article><article><span>03</span><h3>Coordinate pickup</h3><p>The donor and recipient coordinate safe collection and update the status.</p></article></div></section>
+  </main>
+  <footer><div class="brand"><span class="brand-mark">♥</span><strong>FoodShare</strong></div><p>Designed to help communities share food and reduce waste.</p><small>Demo project · Use responsibly and follow local food-safety guidance.</small></footer>
+  <script src="app.js"></script>
+</body>
+</html>

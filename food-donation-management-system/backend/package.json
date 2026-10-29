@@ -1,0 +1,14 @@
+{
+  "name": "foodshare-backend",
+  "version": "1.0.0",
+  "description": "Node.js API for FoodShare food donation management system",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
